@@ -48,6 +48,10 @@ Scene::Scene(void)
     // 5 lines in instructor solution (YMMV)
     //
     passthruShaderProgram = new PassthruShaderProgram();
-    addGeometricalObject(new Circle(Point2(0, 0), 1.0));
+    for (GLfloat r = 0.1; r <= 1.0; r+=0.1)
+    {
+        addGeometricalObject(new Circle(Point2(0,0), r));
+    }
+    //addGeometricalObject(new Circle(Point2(0, 0), 1.0));
 }
 

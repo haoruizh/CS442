@@ -1,7 +1,7 @@
 pa01_circles: Making OpenGL Draw Circles
 ========================================
 
-OpenGL does not draw curved lines.  Even when drawing Bezier curves or
+OpenGL does not draw curved lines.  even when drawing Bezier curves or
 NURBS surfaces (we'll discuss these later in the course), ultimately
 OpenGL is drawing straight lines (including triangle edges).  It is
 possible, however, to approximate a circle by drawing a regular

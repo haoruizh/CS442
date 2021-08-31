@@ -33,12 +33,24 @@ void Circle::tessellate(void)
     //
     // 19 lines in instructor solution (YMMV)
     //
-    Point2 vertexPositions[4] = {
-        Point2(-0.5, -0.5),
-        Point2( 0.5, -0.5),
-        Point2( 0.5,  0.5),
-        Point2(-0.5,  0.5),
-    };
+
+    const GLfloat PI = 3.1415926f;
+    const GLfloat P = 0.00119;
+    GLfloat D = P/2;
+    int n = ceil(50);
+    Point2 vertexPositions[n];
+    // = {
+    //     Point2(-0.5, -0.5),
+    //     Point2( 0.5, -0.5),
+    //     Point2( 0.5,  0.5),
+    //     Point2(-0.5,  0.5),
+    //     Point2(0.7,0.7),
+    //     Point2(0.6,0.6)
+    // };
+    for (int i =0; i < n; i++)
+    {
+        vertexPositions[i] = Point2(this->radius*cos(2*PI/n*i)+this->center.g.x, this->radius*sin(2*PI/n*i)+this->center.g.y);
+    }
     tessellationPolyLine = new PolyLine(vertexPositions,
                                         N_ELEM(vertexPositions), true);
 }
