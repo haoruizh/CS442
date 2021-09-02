@@ -38,7 +38,7 @@ void Circle::tessellate(void)
     const GLfloat P = 0.00119;
     GLfloat D = P/2;
     // find side numbers for 1 degree with given D and radius
-    // find radians based on one side of polygon
+    // find radians based on radius of polygon and circle
     GLfloat radians = acosf((this->radius-D)/this->radius);
     // find degree 
     GLfloat sidesPerDegree = radians/PI*180;
