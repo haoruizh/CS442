@@ -37,7 +37,13 @@ void Circle::tessellate(void)
     const GLfloat PI = 3.1415926f;
     const GLfloat P = 0.00119;
     GLfloat D = P/2;
-    int n = ceil(50);
+    // find side numbers for 1 degree with given D and radius
+    // find radians based on one side of polygon
+    GLfloat radians = acosf((this->radius-D)/this->radius);
+    // find degree 
+    GLfloat sidesPerDegree = radians/PI*180;
+    // find sides number 
+    int n = ceil(360/sidesPerDegree);
     Point2 vertexPositions[n];
     // = {
     //     Point2(-0.5, -0.5),
